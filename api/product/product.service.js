@@ -9,10 +9,10 @@ module.exports = {
 	add,
 };
 
-async function query(userId) {
+async function query() {
 	const collection = await dbService.getCollection('product');
 	try {
-		const products = await collection.find({ members: { $elemMatch: { _id: userId } } }).toArray();
+		const products = await collection.find().toArray();
 		return products;
 	} catch (err) {
 		console.log('Product SERVICE: Cannot load products.');
