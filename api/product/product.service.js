@@ -13,6 +13,7 @@ async function query() {
 	const collection = await dbService.getCollection('product');
 	try {
 		const products = await collection.find().toArray();
+		console.log('products:', products)
 		return products;
 	} catch (err) {
 		console.log('Product SERVICE: Cannot load products.');

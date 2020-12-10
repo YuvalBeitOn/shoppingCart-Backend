@@ -7,7 +7,7 @@ async function getProduct(req, res) {
 }
 
 async function getProducts(req, res) {
-    const products = await productService.query(req.query)
+    const products = await productService.query()
     res.send(products)
 }
 
